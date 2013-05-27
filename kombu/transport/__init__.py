@@ -70,6 +70,7 @@ TRANSPORT_ALIASES = {
     'zeromq': 'kombu.transport.zmq:Transport',
     'zmq': 'kombu.transport.zmq:Transport',
     'amqplib': 'kombu.transport.amqplib:Transport',
+    'kafka': 'kombu.transport.kafka.Transport',
 }
 
 _transport_cache = {}

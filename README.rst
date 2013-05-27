@@ -75,6 +75,7 @@ and the `Wikipedia article about AMQP`_.
 .. _`carrot`: http://pypi.python.org/pypi/carrot/
 .. _`librabbitmq`: http://pypi.python.org/pypi/librabbitmq
 .. _`SoftLayer Message Queue`: http://www.softlayer.com/services/additional/message-queue
+.. _`Kafka`: https://kafka.apache.org/
 
 
 .. _transport-comparison:
@@ -106,6 +107,8 @@ Transport Comparison
 | *sqlalchemy*  | Virtual  | Yes        | Yes [#f1]_ | No            |
 +---------------+----------+------------+------------+---------------+
 | *SLMQ*        | Virtual  | Yes        | Yes [#f1]_ | No            |
++---------------+----------+------------+------------+---------------+
+| *kafka*       | Virtual  | Yes        | Yes [#f1]_ | No            |
 +---------------+----------+------------+------------+---------------+
 
 
