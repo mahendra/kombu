@@ -21,16 +21,6 @@ consumers can fetch data in parallel
 * The client API needs to modified to fetch data only from a single
   partition. This can be used for effective load balancing also.
 
-**Known issues**
-
-* The offsets are not committed. There is a bug in the upstream kafka
-  library which needs to be fixed -
-  https://github.com/mumrah/kafka-python/issues/18
-
-* On restart, the client will replay messages from the beginning. This is
-  because of a bug in offset commit fetch request -
-  https://github.com/mumrah/kafka-python/issues/21
-
 """
 
 from __future__ import absolute_import
@@ -85,9 +75,8 @@ class Channel(virtual.Channel):
         """
         consumer = self._kafka_consumers.get(queue, None)
         if consumer is None:
-            # TODO: Enable auto_commit once upstream bugs are fixed
             consumer = SimpleConsumer(self.client, self._kafka_group, queue,
-                                      auto_commit=False)
+                                      auto_commit=True)
             self._kafka_consumers[queue] = consumer
 
         return consumer
@@ -113,8 +102,8 @@ class Channel(virtual.Channel):
         for msg in consumer:
             pass
 
-        # TODO: Force a commit once messages have been read
-        # consumer.commit()
+        # Force a commit once messages have been read
+        consumer.commit()
 
     def _delete(self, queue, *args, **kwargs):
         """Delete a queue/topic"""
