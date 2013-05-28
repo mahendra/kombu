@@ -76,7 +76,9 @@ class Channel(virtual.Channel):
         consumer = self._kafka_consumers.get(queue, None)
         if consumer is None:
             consumer = SimpleConsumer(self.client, self._kafka_group, queue,
-                                      auto_commit=True)
+                                      auto_commit=True,
+                                      auto_commit_every_n = 20,
+                                      auto_commit_every_t = None)
             self._kafka_consumers[queue] = consumer
 
         return consumer
@@ -144,7 +146,7 @@ class Channel(virtual.Channel):
     def client(self):
         if self._client is None:
             self._client = self._open()
-            self._kafka_group = self.connection.client.virtual_host
+            self._kafka_group = self.connection.client.virtual_host[0:-1]
         return self._client
 
 
