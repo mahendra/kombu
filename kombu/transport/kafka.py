@@ -101,10 +101,9 @@ class Channel(virtual.Channel):
     def _purge(self, queue):
         """Purge all pending messages in the topic/queue"""
         consumer = self._get_consumer(queue)
-        for msg in consumer:
-            pass
 
-        # Force a commit once messages have been read
+        # Seek to the end of the queue and commit
+        consumer.seek(0, 2)
         consumer.commit()
 
     def _delete(self, queue, *args, **kwargs):
