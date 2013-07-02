@@ -78,7 +78,7 @@ class Channel(virtual.Channel):
             consumer = SimpleConsumer(self.client, self._kafka_group, queue,
                                       auto_commit=True,
                                       auto_commit_every_n = 20,
-                                      auto_commit_every_t = None)
+                                      auto_commit_every_t = 5000)
             self._kafka_consumers[queue] = consumer
 
         return consumer
