@@ -68,6 +68,7 @@ and the `Wikipedia article about AMQP`_.
 .. _`MongoDB`: http://www.mongodb.org/
 .. _`CouchDB`: http://couchdb.apache.org/
 .. _`Zookeeper`: https://zookeeper.apache.org/
+.. _`Kafka`: https://kafka.apache.org/
 .. _`Beanstalk`: http://kr.github.com/beanstalkd/
 .. _`Rabbits and warrens`: http://blogs.digitar.com/jjww/2009/01/rabbits-and-warrens/
 .. _`amqplib`: http://barryp.org/software/py-amqplib/

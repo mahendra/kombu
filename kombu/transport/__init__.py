@@ -56,6 +56,7 @@ TRANSPORT_ALIASES = {
     'mongodb': 'kombu.transport.mongodb:Transport',
     'couchdb': 'kombu.transport.couchdb:Transport',
     'zookeeper': 'kombu.transport.zookeeper:Transport',
+    'zkafka': 'kombu.transport.zkafka:Transport',
     'django': 'kombu.transport.django:Transport',
     'sqlalchemy': 'kombu.transport.sqlalchemy:Transport',
     'sqla': 'kombu.transport.sqlalchemy:Transport',

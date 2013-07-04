@@ -32,6 +32,7 @@
     kombu.transport.mongodb
     kombu.transport.couchdb
     kombu.transport.zookeeper
+    kombu.transport.zkafka
     kombu.transport.filesystem
     kombu.transport.django
     kombu.transport.django.models
